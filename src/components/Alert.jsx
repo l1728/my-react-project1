@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import './Alert.css';
+import css from './Alert.module.css';
 
 // const alertStyles = {
 //   margin: 8,
@@ -40,12 +40,10 @@ import './Alert.css';
 export const Alert = ({ variant, outlined, elevated, children }) => {
   return (
     <p
-      className={clsx(
-        'alert',
-        variant,
-        outlined && 'is-outlined',
-        elevated && 'is-elevated'
-      )}
+      className={clsx(css[variant], {
+        [css.isOutlined]: outlined,
+        [css.isElevated]: elevated,
+      })}
     >
       {children}
     </p>
