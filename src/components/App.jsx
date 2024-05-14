@@ -1,33 +1,91 @@
-// import Product from './Product';
+// const CustomButton = ({ message, children }) => {
+//   return <button onClick={() => alert(message)}>{children}</button>;
+// };
 
-// export default function App() {
+// export const App = () => {
+//   return (
+//     <>
+//       <CustomButton message="Playing music!">Play some music</CustomButton>
+//       <CustomButton message="Uploading your data">Upload data</CustomButton>
+//     </>
+//   );
+// };
+
+import { useState } from 'react';
+
+// const App = () => {
+//   // let clicks = 0;
+//   const [clicks, setClicks] = useState(0);
+//   const [isOpen, setIsOpen] = useState(false);
+
+//   const handleClick = () => {
+//     // clicks = clicks + 1;
+//     setClicks(clicks + 1);
+//   };
+
+//   const handleToggle = () => {
+//     setIsOpen(!isOpen);
+//   };
+//   return (
+//     <>
+//       <button onClick={handleClick}>Current: {clicks}</button>
+//       <button onClick={handleToggle}>{isOpen ? 'Hide' : 'Show'}</button>
+//       {isOpen && <p>Now you can see me!</p>}
+//     </>
+//   );
+// };
+
+//
+
+// const ClickCounter = ({ value, onUpdate }) => {
+//   return <button onClick={onUpdate}>Current: {value}</button>;
+// };
+
+// const App = () => {
+//   const [clicks, setClicks] = useState(0);
+
+//   const handleClick = () => {
+//     setClicks(clicks + 1);
+//   };
+
+//   return (
+//     <>
+//       <ClickCounter value={clicks} onUpdate={handleClick} />
+//       <ClickCounter value={clicks} onUpdate={handleClick} />
+//     </>
+//   );
+// };
+
+// const App = () => {
+//   const [values, setValues] = useState({
+//     x: 0,
+//     y: 0,
+//   });
+
+//   const updateX = () => {
+//     setValues({
+//       ...values,
+//       x: values.x + 1,
+//     });
+//   };
+
+//   const updateY = () => {
+//     setValues({
+//       ...values,
+//       y: values.y + 1,
+//     });
+//   };
+
 //   return (
 //     <div>
-//       <h1>Best selling</h1>
-//       <Product name="Tacos With Lime" price={10.99} />
-//       <Product
-//         name="Fries and Burger"
-//         imgUrl="https://images.pexels.com/photos/70497/pexels-photo-70497.jpeg?dpr=2&h=480&w=640"
-//         price={14.29}
-//       />
+//       <p>
+//         x: {values.x}, y: {values.y}
+//       </p>
+
+//       <button onClick={updateX}>Update x</button>
+//       <button onClick={updateY}>Update y</button>
 //     </div>
 //   );
-// }
+// };
 
-import { Alert } from './Alert';
-
-export const App = () => {
-  return (
-    <>
-      <Alert variant="info">Please update your email!</Alert>
-      <Alert variant="error">There was an error during transaction!</Alert>
-      <Alert variant="success">
-        Payment received, thank you for your purchase!
-      </Alert>
-      <Alert variant="warning">
-        Please update your profile contact information
-      </Alert>
-    </>
-  );
-};
 export default App;
