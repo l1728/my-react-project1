@@ -88,17 +88,22 @@
 //   );
 // };
 
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
-const App = () => {
-  const [clicks, setClicks] = useState(0);
+function App() {
+  const [counter, setCounter] = useState(0);
+  const [counter2, setCounter2] = useState(0);
+
+  const total = counter + counter2;
+
   useEffect(() => {
-    console.log('You can see me only once!');
-  }, []);
+    console.log('current total:', total);
+    console.log('current counter:', counter);
+  }, [counter, total]);
   return (
-    <button onClick={() => setClicks(clicks + 1)}>
-      You clicked {clicks} times
-    </button>
+    <div>
+      <button onClick={() => setCounter(counter + 1)}>{counter}</button>
+    </div>
   );
-};
+}
 export default App;
