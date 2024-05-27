@@ -1,12 +1,35 @@
 import './App.css';
-
-import LoginForm from './LoginForm/LoginForm';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+import { object } from 'prop-types';
 
 const App = () => {
+  const [articles, setArticles] = useState([]);
+  useEffect(() => {
+    async function fetchArticles() {
+      const response = await axios.get(
+        'https://hn.algolia.com/api/v1/search?query=react'
+      );
+      setArticles(response.data.hits);
+    }
+    fetchArticles();
+  }, []);
   return (
-    <>
-      <LoginForm />
-    </>
+    <div>
+      <h1>Latest articles</h1>
+
+      {articles.length > 0 && (
+        <ul>
+          {articles.map(({ objectID, url, title }) => (
+            <li key={objectID}>
+              <a href={url} target="_blank" rel="noreferrer noopener">
+                {title}
+              </a>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
   );
 };
 
