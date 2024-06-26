@@ -10,7 +10,7 @@ import { selectIsRefreshing } from '../redux/auth/selectors';
 const HomePage = lazy(() => import('../pages/HomePage/HomePage'));
 const RegisterPage = lazy(() => import('../pages/RegisterPage/RegisterPage'));
 const LoginPage = lazy(() => import('../pages/LoginPage/LoginPage'));
-const TasksPage = lazy(() => import('../pages/TasksPage/TasksPage'));
+const TasksPage = lazy(() => import('../pages/TaskPage/TaskPage'));
 
 export const App = () => {
   const dispatch = useDispatch();
